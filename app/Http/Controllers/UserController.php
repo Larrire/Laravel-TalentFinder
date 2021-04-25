@@ -10,12 +10,8 @@ class UserController extends Controller
 {
     private $template_data;
 
-    public function __construct(){
-        
-    }
-
     public function default_template_data($request){
-        $this->template_data['user_name'] = $request->user()['name'];
+        $this->template_data['user_name'] = explode(' ', $request->user()['name'])[0];
         $this->template_data['user_email'] = $request->user()['email'];
         $this->template_data['user_type'] = $request->user()['user_type'];
         $this->template_data['user_id'] = $request->user()['id'];

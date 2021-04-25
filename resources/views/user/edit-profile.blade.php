@@ -114,7 +114,7 @@
                                 </div>
                             @endforeach
                             <div id="div-btn-add-skill">
-                                <button type="button" class="button button-out-purple modal-opener" id="button-add-skill" data-modal-id="modal-skills">
+                                <button type="button" class="button button-out-purple" id="button-add-skill" data-modal-id="modal-skills">
                                     Add skill
                                 </button>
                             </div>{{-- div-add-skill --}}
@@ -292,7 +292,7 @@
 
         function saveChangesUserInfo(){
             const myHeaders = new Headers();
-            myHeaders.append("X-CSRF-TOKEN", "{{csrf_token()}}");
+            myHeaders.append("X-CSRF-TOKEN", csrf);
             const form = new FormData(document.querySelector('#form-user-info'));
 
             fetch('{{url("update_user_info")}}', {
