@@ -1,0 +1,230 @@
+div#profile-data {
+    display: flex;
+}
+
+div#profile-data label.label {
+    color: rgb(124, 41, 145);
+}
+
+div#profile-data div#section-data h1.user_name{
+    font-size: 25px;
+    color: rgb(171, 38, 204);
+    font-weight: bold;
+}
+
+div#profile-data div#section-data textarea#textarea-user-description{
+    resize: none;
+}
+
+div#profile-data div#section-data div#div-userinfo-actions{
+    height: 0px;
+    overflow: hidden;
+    transition: height 0.5s;
+}
+
+div#profile-data div#section-data div#div-userinfo-actions.opened{
+    height: 50px;
+}
+
+div#profile-data div#div-expeciences {
+    padding-top: 15px;
+    display: flex;
+    flex-direction: column;
+}
+
+div#profile-data div#div-expeciences div.div-experience {
+    padding: 10px;
+    padding-left: 50px;
+    margin-bottom: 25px;
+    font-family: Arial, Helvetica, sans-serif;
+    position: relative;
+    border-radius: 10px;
+    overflow-x: hidden;
+    min-height: 110px;
+}
+
+div#profile-data div#div-expeciences div.div-experience div.div-options{
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    right: -50px;
+    background: rgba(189, 16, 233, 0.6);
+    backdrop-filter: blur(2px);
+    width: 50px;
+    color: white;
+    color: transparent;
+    transition: width 0.3s, color 0.4s, right 0.3s;
+    display: flex;
+    flex-direction: column;
+}
+
+div#profile-data div#div-expeciences div.div-experience div.div-options button{
+    background: transparent;
+    border: none;
+    width: 100%;
+    height: 50%;
+    color: white;
+    text-shadow: 1px 1px 1px #333;
+    cursor: pointer;
+}
+
+div#profile-data div#div-expeciences div.div-experience div.div-options button:hover{
+    background: rgba(189, 16, 233, 0.6);
+}
+
+div#profile-data div#div-expeciences div.div-experience:hover {
+    box-shadow: 5px 5px 10px #e9e9e9;
+}
+
+div#profile-data div#div-expeciences div.div-experience:hover div.div-options{
+    /* width: 50px; */
+    right: -1px;
+}
+
+div#profile-data div#div-expeciences div.div-experience div.company-data {
+    color: #555;
+    display: flex;
+    justify-content: space-between;
+    margin-left: -25px;
+    border-bottom: 2px solid rgb(189, 16, 233);
+}
+
+div#profile-data div#div-expeciences div.div-experience div.company-data span.company-name{
+    color: #777;
+    font-weight: bold;
+    font-size: 20px;
+}
+
+div#profile-data div#div-expeciences div.div-experience div.occupation{
+    padding-top: 5px;
+    color: #555;
+    font-size: 18px;
+}
+
+div#profile-data div#div-expeciences div.div-experience div.description{
+    padding-top: 5px;
+    color: #777;
+}
+
+div#profile-data div#div-expeciences div#div-btn-add-experience,
+div#profile-data div#div-skills div#div-btn-add-skill {
+    display: flex;
+    justify-content: center;
+}
+
+div#profile-data > section + section{
+    margin-left: 20px;
+    width: 100%;
+}
+
+div#profile-data div#section-profile-image img{
+    width: 300px;
+}
+
+div#profile-data div#section-profile-image button#change-image-button{
+    background-color: transparent;
+    color: rgb(124, 41, 145);
+    border-color: rgb(124, 41, 145);
+    transition: background-color 0.5s, color 0.2s;
+}
+
+div#profile-data div#section-profile-image button#change-image-button:hover{
+    background-color: rgb(124, 41, 145);
+    color: white;
+}
+
+div#profile-data div#section-profile-image div#div-social-media{
+    border-top: 2px solid rgb(124, 41, 145);
+    padding-top: 10px;
+}
+
+div#profile-data div#section-profile-image div#div-social-media {
+    font-family: Arial, Helvetica, sans-serif;
+    color: #666;
+}
+
+div#profile-data div#section-profile-image div#div-header-social-medias {
+    display: flex;
+    justify-content: space-between;
+}
+
+div#profile-data div#section-profile-image div#div-social-media div#div-list-social-medias{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+}
+
+div.social-media-item{
+    padding: 10px;
+    margin-top: 25px;
+    width: 25%;
+    font-size: 45px;
+    cursor: pointer;
+    background: transparent;
+}
+
+div.social-media-item a{
+    transition: 0.2s;
+}
+
+div.social-media-item a{
+    text-decoration: none;
+    color: #666;
+}
+
+div.social-media-item.instagram:hover a{
+    background: linear-gradient(to top right, #ffc401, #a303ff);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+div.social-media-item.facebook:hover a{
+    color: #3B5998;
+}
+div.social-media-item.linkedin:hover a{
+    color: #0E76A8;
+}
+div.social-media-item.behance:hover a{
+    color: #000;
+}
+div.social-media-item.github:hover a{
+    color: #000;
+}
+div.social-media-item.pinterest:hover a{
+    color: #c8232c;
+}
+
+div#modal-social-medias i.fab {
+    font-size: 25px;
+    margin-right: 20px;
+    text-align: center;
+}
+
+div#profile-data div#section-data div#div-contact-info{
+    display: flex;
+}
+
+div#profile-data div#section-data div#div-contact-info > div + div{
+    margin-left: 20px;
+}
+
+div#div-skills div.skill {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-family: Arial, Helvetica, sans-serif;
+    color: #333;
+}
+
+div#div-skills div.skill span.skill-name,
+div#div-skills div.skill span.experience-time{
+    padding: 20px;
+    text-align: center;
+    width: 20%;
+}
+
+div#div-skills div.skill span.middle-line {
+    background-color: rgb(189, 16, 233);
+    border-radius: 50px;
+    height: 3px;
+    width: 100%;
+}

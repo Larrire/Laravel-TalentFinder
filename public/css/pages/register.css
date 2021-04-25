@@ -1,0 +1,120 @@
+div#div-background {
+    /* background-color: rgb(249, 251, 255);
+    background-color: rgb(212, 219, 233); */
+    background: rgb(19, 36, 70);
+    /* background: linear-gradient(to bottom right, rgb(249, 251, 255), rgb(212, 219, 233));
+    background: linear-gradient(to bottom right, rgb(249, 251, 255), rgb(53, 64, 87));
+    background: linear-gradient(to bottom, rgb(196, 212, 243) 60%, rgb(66, 165, 83), rgb(66, 165, 83));
+    background: linear-gradient(to bottom, rgb(184, 206, 250) 60%, rgb(66, 165, 83), rgb(66, 165, 83), rgb(66, 165, 83)); */
+    background: linear-gradient(to bottom, rgb(18, 36, 73) 55%, rgb(124, 41, 145));
+    /* background: linear-gradient(to bottom, rgb(14, 46, 110) 55%, rgb(124, 41, 145)); */
+    /* background-color: rgb(88, 104, 136); */
+    /* background-color: #f9f9f9; */
+    min-height: 100vh;
+    padding: 20px;
+}
+
+/* Width */
+::-webkit-scrollbar {
+    width: 10px;
+    background-color: transparent;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+    background: rgb(171, 38, 204);
+    border-radius: 10px;
+    border: 5px solid rgba(255, 255, 255, 0);
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+    background: rgb(124, 41, 145);
+}
+
+div#div-content{
+    position: relative;
+    /* height: 100%; */
+    display: flex;
+    justify-content: center;
+    /* align-items: center; */
+    padding: 20px;
+}
+
+div#div-errors{
+    position: absolute;
+    left: 25px;
+    border-radius: 10px;
+    padding: 20px;
+    background: rgba(255, 255, 255, 0.9);
+    color: red;
+}
+
+div#div-form{
+    display: block;
+    border-radius: 10px;
+    padding: 20px;
+    background: rgba(255, 255, 255, 0.9);
+}
+
+div#div-form-title{
+    text-align: center;
+    font-family: Arial, Helvetica, sans-serif;
+    color: rgb(124, 41, 145);
+}
+
+label{
+    font-size: 18px;
+    font-family: Arial, Helvetica, sans-serif;
+    color: rgb(124, 41, 145);
+}
+
+input.input{
+    margin-top: 10px;
+    color: #555;
+    width: 100%;
+}
+
+button.button{
+    color: rgb(124, 41, 145);
+    border-color: rgb(124, 41, 145);
+    padding: 10px 20px;
+    font-size: 18px;
+    border-width: 2px;
+    transition: background-color 0.5s, color 0.3s;
+}
+
+button.button:hover{
+    color: white;
+    border-color: rgb(171, 38, 204);
+    background-color: rgb(124, 41, 145);
+}
+
+div.form-group div#div-register-options{
+    padding: 5px 0;
+}
+div.form-group div#div-register-options label{
+    color: #333;
+}
+div.form-group div#div-register-options input{
+    margin: 5px 0;
+}
+
+/* div.form-group:last-of-type{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 10px;
+} */
+
+
+div.form-group:last-of-type a{
+    text-decoration: none;
+    color: #777;
+    /* text-shadow: 1px 1px 1px gray; */
+}
+
+div.form-group:last-of-type a:hover{
+    text-decoration: underline;
+    color: #999;
+}
