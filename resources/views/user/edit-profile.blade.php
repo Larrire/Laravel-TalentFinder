@@ -41,13 +41,11 @@
 
                 <div class="card-body">
                     <section class="section">
-                        <form id="form-user-info">
-                            
-                        </form>
+                        <form id="form-user-info"></form>
                         <div id="div-userinfo-actions" class="form-group display-flex justify-content-end">
                             <div>
                                 <button type="button" onclick="saveChangesUserInfo()" class="button button-purple">Save changes</button>
-                                <button type="button" onclick="clearChangesUserInfo()" class="button button-out-purple">Cancel</button>
+                                <button type="button" onclick="clearChangesUserInfo()" class="button button-out-purple">Clear changes</button>
                             </div>
                         </div> {{-- div-actions --}}
                     </section>
@@ -243,6 +241,7 @@
         csrf = document.querySelector('meta[name="csrf-token"').getAttribute('content');
         
         loadUserInfo();
+        loadSkills();
         // End init scripts
         // user info scripts
         let userInfoWatchedElements;
@@ -283,7 +282,7 @@
                 </div>{{-- div-email --}}
                 <div class="form-group">
                     <label class="label" for="">About me</label><br>
-                    <textarea id="textarea-user-description" name="description" class="input w100 watch-changes-userInfo" placeholder="tell something about you" data-prev-value="${userInfo.description.trim()}" rows="5">${userInfo.description.trim()}</textarea>
+                    <textarea id="textarea-user-description" type="text" name="description" class="input w100 watch-changes-userInfo" placeholder="tell something about you" data-prev-value="${userInfo.description}" rows="5">${userInfo.description}</textarea>
                 </div> {{-- div-description --}}
             `;
             document.querySelector('#form-user-info').innerHTML = divUserInfo;
@@ -293,12 +292,13 @@
         function saveChangesUserInfo(){
             const myHeaders = new Headers();
             myHeaders.append("X-CSRF-TOKEN", csrf);
-            const form = new FormData(document.querySelector('#form-user-info'));
+            const form = document.querySelector('#form-user-info');
+            const formData = new FormData(form);
 
             fetch('{{url("update_user_info")}}', {
                 method:'POST', 
                 headers: myHeaders,
-                body: form
+                body: formData
             })
             .then(function(response){
                 response.json()
@@ -356,6 +356,9 @@
 
         function submitFormExperience(){
             const form = new FormData(document.querySelector('#form-experience'));
+            console.log(form.get('current_job'))
+            const is_current_job = (document.querySelector('#form-experience input[name=current_job]').getAttribute('checked')==='checked') ? 1 : 0;
+            form.set('current_job', is_current_job);
             if( isEditingExperience ){
                 saveChangesExperience(form);
             } else {
@@ -396,7 +399,7 @@
             const myHeaders = new Headers();
             myHeaders.append("X-CSRF-TOKEN", csrf);
             form.append('id', idExperienceEdit);
-
+            console.log(form);
             fetch('{{url("experience/update")}}', {
                 method:'POST', 
                 headers: myHeaders,
@@ -408,6 +411,7 @@
                     console.log(json)
                 });
             });
+            console.log(form);
         }
 
         function addExperience(){
@@ -433,9 +437,9 @@
         }
         // End experience scripts
         // Skills scripts
-        let skills;
+        let skills = [];
         function loadSkills(){
-            fetch('{{url("")}}'+`/skills/list`)
+            fetch('{{url("")}}'+`/user_skills`)
             .then(function (response){
                 response.json()
                 .then(function(json){

@@ -26,11 +26,13 @@ class UserController extends Controller
         $request->validate([
             'name' => ['required', 'string'],
             'email' => ['required', 'email'],
+            'description' => ['string', 'nullable'],
         ]);
+
         $user = User::find($request->user()->id);
-        $user->name = $request->name;
-        $user->email = $request->email;
-        $user->description = $request->description;
+        $user->name = $request->name ?? '';
+        $user->email = $request->email ?? '';
+        $user->description = $request->description ?? '';
         $user->save();
         echo json_encode($user);
     }

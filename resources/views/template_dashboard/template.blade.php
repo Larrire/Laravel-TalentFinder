@@ -1,4 +1,4 @@
-<html>
+<html lang="pt-br">
     <head>
         <title>Talent Finder</title>
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -27,6 +27,18 @@
                     </a>
                     <a href="{{url('search')}}">
                         <div class="link @if($active_link==='search') active @endif">Search</div>
+                    </a>
+                    <a href="#">
+                        <div class="link">Home</div>
+                    </a>
+                    <a href="#">
+                        <div class="link">Home</div>
+                    </a>
+                    <a href="#">
+                        <div class="link">Home</div>
+                    </a>
+                    <a href="#">
+                        <div class="link">Home</div>
                     </a>
                     <a href="#">
                         <div class="link">Home</div>

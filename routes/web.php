@@ -35,7 +35,7 @@ Route::middleware(['auth'])->group(function(){
     Route::post('experience/update', 'ExperienceController@update');
     Route::get('experience/delete/{id}', 'ExperienceController@delete');
 
-    Route::post('skills/list', 'SkillsController@list');
+    Route::get('user_skills', 'SkillController@user_skills');
 
     Route::get('search', 'UserController@search')->name('search');
 
