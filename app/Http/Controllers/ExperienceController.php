@@ -19,7 +19,7 @@ class ExperienceController extends Controller
         $newExperience->occupation = $request->occupation;
         $newExperience->date_start = $request->date_start;
         $newExperience->date_end = $request->date_end;
-        $experience->current_job = $request->current_job;''
+        $experience->current_job = $request->current_job;
         $newExperience->description = $request->description;
         $newExperience->save();
     }
