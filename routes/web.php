@@ -21,9 +21,14 @@ Route::post('login', 'LoginController@login');
 Route::get('register', 'LoginController@register_page')->name('register');
 Route::post('register', 'LoginController@register');
 
+
+// Route::get('users', 'UserController@users')->name('users');
+
 Route::middleware(['auth'])->group(function(){
     Route::get('logout', 'LoginController@logout')->name('logout');
     
+    
+
     Route::get('home', 'UserController@home')->name('home');
     Route::get('profile', 'UserController@profile')->name('profile');
     Route::get('view_profile', 'UserController@view_profile');

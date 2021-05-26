@@ -45,6 +45,27 @@ class UserController extends Controller
         return view('user.home', $this->template_data);
     }
 
+    public function users(){
+        $users = User::all();
+
+        $response = array();
+        foreach($users as $user){
+            $user['options'] = "<div><button onclick='alert(\"".$user['name']."\")' class='button button-out-purple'>Deletar</button></div>";
+            $response['data'][] = $user;
+        }
+
+        echo json_encode($response);
+    }
+
+    public function hello(){
+        $response = array(
+            'name' => 'Jao',
+            'age' => 20
+        );
+
+        echo json_encode($response);
+    }
+
     public function profile(Request $request){
         $this->template_data['active_link'] = 'profile';
         $this->template_data['experiences'] = User::find($request->user()->id)->experiences()->get();
